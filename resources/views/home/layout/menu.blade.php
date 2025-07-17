@@ -1,98 +1,3 @@
-<header
-    class="fixed z-50 top-9 right-0 left-0 hidden lg:flex items-center container h-24 mx-auto rounded-3xl py-5 backdrop-blur-[6px]">
-    <div class="flex items-center justify-between w-full  text-navy-100 font-peyda">
-        <nav class="flex gap-x-9 items-center h-14">
-            <div class="flex gap-x-9">
-                <img src="/home/image/logo.svg" alt="Nivor" class="w-[100px]">
-            </div>
-            <ul class="flex gap-x-5 2xl:gap-x-9 h-full child:leading-[56px]">
-                <li>
-                    <a href="/">خانه</a>
-                </li>
-                <li class="relative group">
-                    <a href="/category/cycling-clothes" class="group-hover:text-orange-300">لباس دوچرخه سواری</a>
-                    <div
-                        class="absolute opacity-0 invisible group-hover:opacity-100 group-hover:visible top-full w-60 space-y-4 child:text-sm  text-zinc-700 dark:text-white bg-white p-6 dark:bg-zinc-700 rounded-2xl border-t-[3px] border-t-orange-300 transition-all child:block shadow-shadow child:transition-colors child-hover:text-orange-300">
-                        <a href="/category/cycling-clothes">لباس دوچرخه سواری</a>
-                        <a href="/category/cycling-jersey">پیراهن دوچرخه سواری</a>
-                        <a href="/category/downhill-jersey">لباس دوچرخه سواری کوهستان</a>
-                        <a href="/category/cycling-scarf">اسکارف دوچرخه سواری</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="/category/wrestling-clothes">لباس کشتی</a>
-                </li>
-                {{--                <li>--}}
-                {{--                    <a href="">لباس رشگارد</a>--}}
-                {{--                </li>--}}
-                {{--                <li>--}}
-                {{--                    <a href="">لباس بدنسازی</a>--}}
-                {{--                </li>--}}
-                <li class="flex relative">
-                    <a href="https://samur.ir" target="_blank">خرید کتونی</a>
-                    <div class="absolute -left-4 -top-0 text-white bg-rose-500 rounded-sm text-xs p-[0.10rem]">جدید
-                    </div>
-                </li>
-                <li>
-                    <a href="tel:09352138605">تماس با ما</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="flex gap-x-5 xl:gap-x-7">
-
-            <div class="flex items-center gap-x-5">
-                @if(!\Cart::isEmpty())
-                    <div class="flex gap-x-5 relative">
-                        <a href="/cart" aria-label="cart">
-                            <svg class="w-7 h-7">
-                                <use xlink:href="#cart"></use>
-                            </svg>
-                        </a>
-                        <div
-                            class="absolute -right-4 -top-2 text-white bg-red-600 text-xs px-2 py-1 rounded-full">{{\Cart::getContent()->count()}}</div>
-                    </div>
-                @else
-                    <div class="flex gap-x-5 relative">
-                        <a href="/cart" aria-label="cart">
-                            <svg class="w-7 h-7">
-                                <use xlink:href="#cart"></use>
-                            </svg>
-                        </a>
-                    </div>
-                @endif
-            </div>
-
-
-            @auth()
-                <a href="/auth" class="flex items-center gap-x-2.5">
-                    <svg class="w-7 h-7 rotate-180">
-                        <use xlink:href="#auth"></use>
-                    </svg>
-                    <span class="hidden xl:inline-block">
-                        {{auth()->user()->name != null ? auth()->user()->name ." ". auth()->user()->family : ''}} <br>
-                        <span class="text-xs font-iransans">
-                            {{number_format(auth()->user()->cashback)}}
-                             <svg class="cashback-amount-menu">
-                                    <use xlink:href="#tooman"></use>
-                             </svg>
-                        </span>
-                    </span>
-
-                </a>
-
-            @else
-                <a href="/auth" class="flex items-center gap-x-2.5">
-                    <svg class="w-7 h-7 rotate-180">
-                        <use xlink:href="#auth"></use>
-                    </svg>
-                    <span class="hidden xl:inline-block">ورود | ثبت نام</span>
-                </a>
-            @endauth
-
-        </div>
-    </div>
-</header>
-
 <div class="flex lg:hidden items-center justify-between bg-white dark:bg-zinc-700 px-4 h-16 mb-12">
     <div class="nav-icon">
         <svg class="w-6 h-6 text-zinc-700 dark:text-white">
@@ -223,3 +128,150 @@
         </div>
     </div>
 </div>
+
+<section class="bg-white px-4">
+    <div class="container mx-auto max-w-screen-xl">
+        <div class="flex items-center justify-between gap-4 lg:gap-40 pt-6 pb-4">
+            <div class="lg:hidden leading-none z-10">
+                <div class="drawer">
+                    <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+                    <div class="drawer-content">
+                        <!-- Page content here -->
+                        <label for="my-drawer" class="drawer-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-black swap-off fill-current">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="drawer-side">
+                        <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                        <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                            <div class="drawer-content text-left">
+                                <label for="my-drawer" class="swap swap-rotate drawer-button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </label>
+                            </div>
+                            <!-- Sidebar content here -->
+                            <li><a href="index.html">صفحه اصلی</a></li>
+                            <li><a href="shop.html">فروشگاه</a></li>
+                            <li><details>
+                                    <summary><a href="#">زیرمنو</a></summary>
+                                    <ul class="p-2 z-10 w-48 m-0">
+                                        <li><a href="order.html">سفارش ها</a></li>
+                                        <li><a href="interest-list.html">لیست علاقه مندی</a></li>
+                                        <li><a href="download.html">دانلودها</a></li>
+                                        <li><a href="edit-account.html">جزئیات حساب کاربری</a></li>
+                                        <li><a href="my-account.html">پیشخوان حساب کاربری</a></li>
+                                        <li><a href="question.html">سوالات متداول</a></li>
+                                        <li><a href="single-page.html">جزئیات وبلاگ</a></li>
+                                        <li><a href="cart.html">سبدخرید</a></li>
+                                        <li><a href="checkout.html">جزئیات پرداخت</a></li>
+                                        <li><a href="single-product.html">جزئیات محصول</a></li>
+
+                                    </ul>
+                                </details></li>
+                            <li><a href="checkout.html">جزئیات پرداخت</a></li>
+                            <li><a href="comparison.html">مقایسه محصول</a></li>
+                            <li><a href="blog.html">وبلاگ</a></li>
+                            <li><a href="contact-us.html">تماس با ما</a></li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center lg:flex-1 gap-8">
+                <div><a href="index.html"><img src="../assets/images/logo.png" alt=""></a></div>
+                <div class="hidden lg:block form-control w-full">
+                    <div class="relative">
+                        <input type="text" placeholder="جستجو کنید در ترازو ..." class="input input-bordered w-full placeholder:text-sm" />
+                        <button class="btn absolute top-0 left-0 rounded-r-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                            </svg>
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <div>
+                    <a href="question.html"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="hidden lg:block"><a href="login.html">ورود / ثبت نام</a></div>
+                <a href="login.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 lg:hidden">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                    </svg>
+                </a>
+
+                <div class="indicator">
+                    <span class="indicator-item badge bg-yellow-400">4+</span>
+                    <a href="cart.html" class="p-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-between items-center pb-4">
+            <div class="block lg:hidden form-control w-full">
+                <div class="relative">
+                    <input type="text" placeholder="جستجو کنید در ترازو ..." class="input input-bordered w-full placeholder:text-sm" />
+                    <button class="btn absolute top-0 left-0 rounded-r-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                        </svg>
+
+                    </button>
+                </div>
+            </div>
+            <div class="flex items-center gap-8">
+                <div class="hidden lg:block">
+
+                    <ul class="flex menu lg:menu-horizontal !p-0">
+                        <li><a href="index.html">صفحه اصلی</a></li>
+                        <li><a href="shop.html">فروشگاه</a></li>
+                        <li><details>
+                                <summary><a href="#">مگامنو</a></summary>
+                                <ul class="menu xl:menu-horizontal lg:min-w-max bg-white rounded-box gap-10 z-10">
+                                    <li>
+                                        <a href="order.html">سفارش ها</a>
+                                        <a href="interest-list.html">لیست علاقه مندی</a>
+                                        <a href="download.html">دانلود ها</a>
+                                        <a href="edit-account.html">جزئیات حساب کاربری</a>
+                                        <a href="my-account.html">پیشخوان حساب کاربری</a>
+
+                                    </li>
+
+                                    <li>
+                                        <a href="question.html">سوالات متداول</a>
+                                        <a href="single-page.html">جزئیات وبلاگ</a>
+                                        <a href="cart.html">سبدخرید</a>
+                                        <a href="checkout.html">جزئیات پرداخت</a>
+                                        <a href="single-product.html">جزئیات محصول</a>
+
+                                    </li>
+                                    <li>
+                                        <img class="w-52" src="../assets/images/product-3.jpg" alt="" srcset="">
+                                    </li>
+
+                                </ul>
+                            </details></li>
+                        <li><a href="checkout.html">جزئیات پرداخت</a></li>
+                        <li><a href="comparison.html">مقایسه محصول</a></li>
+                        <li><a href="blog.html">وبلاگ</a></li>
+                        <li><a href="about-us.html">درباره ما</a></li>
+                        <li><a href="about-us.html">تماس با ما</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,67 +1,118 @@
-@if($bests)
-<section class="product font-peyda">
-    <div class="container">
-        <div class="flex justify-between items-center lg:px-0 px-2 mb-10">
-            <div class="flex items-center">
-                <img src="/home/image/icon/fire.gif" alt="پرفروش های نیور" class="w-8 lg:w-12 pl-2">
-                <h3 class="text-gray-700 lg:text-3xl text-xl">پرفروش‌های نیوُر</h3>
-            </div>
-            <div class="flex items-center gap-x-3 text-gray-400 lg:text-xl text-sm">
-
-
-            </div>
+<section class="my-14 px-4">
+    <div class="container mx-auto max-w-screen-xl">
+        <div class="text-center mb-8">
+            <h2 class="font-YekanBakh-ExtraBlack text-3xl">پرفروش ترین کالاها</h2>
         </div>
-        <div id="owl-one" class="owl-carousel owl-theme">
-            @foreach($bests as $item)
-                <div class="item bg-white p-4 text-center rounded-md shadow-md mx-auto w-[90%] md:w-full my-2">
-                    <figure class="mb-4">
-                        <a href="{{route('home.product.show' , ['category' => $item->category->slug , 'product' => $item->slug])}}">
-                            <img src="{{url('/images/product') . '/' . $item->image}}" alt="{{$item->name}}">
-                        </a>
-                    </figure>
-                    <div class="title mb-3">
-                        <h2 class="text-navy-100 mb-2 text-sm">
-                            <a href="{{route('home.product.show' , ['category' => $item->category->slug , 'product' => $item->slug])}}">{{\Illuminate\Support\Str::limit($item->name , 35)}}</a>
-                        </h2>
-                    </div>
-                    @if($item->quantity_check)
-                        @if($item->sale_check)
-                            <div class="meta my-5 text-xl">
-                                <div class="flex justify-between">
-                                    <div class="new flex">
-                                        <p class="text-red-500 px-1 font-iransans">{{number_format($item->sale_check->sale_price)}}</p>
-                                        <svg class="w-4 h-4">
-                                            <use xlink:href="#tooman"></use>
-                                        </svg>
-                                    </div>
-                                    <div class="old flex">
-                                        <p class="text-gray-400 px-1 line-through font-iransans">{{number_format($item->price_check->price)}}</p>
-                                        <svg class="w-4 h-4">
-                                            <use xlink:href="#tooman"></use>
-                                        </svg>
-                                    </div>
-                                </div>
+        <div class="swiper slider-product2">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-3xl leading-10 relative p-4">
+                        <div class="flex items-center justify-center">
+                            <div>
+                                <a href="single-product.html"> <img class="w-32" src="../assets/images/product-4.jpg" alt=""></a>
                             </div>
-                        @else
-                            <div class="meta my-5 text-xl">
-                                <div class="flex justify-center price">
-                                    <p class="text-red-500 px-1 font-iransans">{{number_format($item->price_check->price)}}</p>
-                                    <svg class="w-4 h-4">
-                                        <use xlink:href="#tooman"></use>
-                                    </svg>
+                            <div>
+                                <a href="single-product.html"><h3 class="font-YekanBakh-ExtraBold text-base">دستگاه ingco</h3></a>
+                                <div class="flex justify-center gap-4 text-base mt-4">
+                                    <span class="line-through">600.000 تومان</span>
+                                    <span class="text-yellow-500">500.000 تومان</span>
                                 </div>
-                            </div>
-                        @endif
-                    @else
-                        <div class="meta my-5 text-xl">
-                            <div class="flex justify-center price">
-                                <p class="text-red-500 px-1 font-iransans">ناموجود</p>
                             </div>
                         </div>
-                    @endif
+                        <div class="flex items-center text-sm justify-center gap-4">
+                            <div>موجودی: 7 از 20</div>
+                            <div><progress class="progress progress-warning w-48 md:w-56" value="70" max="100"></progress></div>
+                        </div>
+
+                    </div>
                 </div>
-            @endforeach
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-3xl leading-10 relative p-4">
+                        <div class="flex items-center justify-center">
+                            <div>
+                                <a href="single-product.html"> <img class="w-32" src="../assets/images/product-3.jpg" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="single-product.html"><h3 class="font-YekanBakh-ExtraBold text-base">دستگاه پمپ باد</h3></a>
+                                <div class="flex justify-center gap-4 text-base mt-4">
+                                    <span class="line-through">50.000 تومان</span>
+                                    <span class="text-yellow-500">45.000 تومان</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-sm justify-center gap-4">
+                            <div>موجودی: 7 از 20</div>
+                            <div><progress class="progress progress-warning w-48 md:w-56" value="70" max="100"></progress></div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-3xl leading-10 relative p-4">
+                        <div class="flex items-center justify-center">
+                            <div>
+                                <a href="single-product.html"> <img class="w-32" src="../assets/images/product-2.jpg" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="single-product.html"><h3 class="font-YekanBakh-ExtraBold text-base">دریل چکشی با کیف</h3></a>
+                                <div class="flex justify-center gap-4 text-base mt-4">
+                                    <span class="line-through">50.000 تومان</span>
+                                    <span class="text-yellow-500">45.000 تومان</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-sm justify-center gap-4">
+                            <div>موجودی: 7 از 20</div>
+                            <div><progress class="progress progress-warning w-48 md:w-56" value="70" max="100"></progress></div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-3xl leading-10 relative p-4">
+                        <div class="flex items-center justify-center">
+                            <div>
+                                <a href="single-product.html"> <img class="w-32" src="../assets/images/product-1.jpg" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="single-product.html"><h3 class="font-YekanBakh-ExtraBold text-base">دریل بتن کن مته ای</h3></a>
+                                <div class="flex justify-center gap-4 text-base mt-4">
+                                    <span class="line-through">843.000 تومان</span>
+                                    <span class="text-yellow-500">841.000 تومان</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-sm justify-center gap-4">
+                            <div>موجودی: 7 از 20</div>
+                            <div><progress class="progress progress-warning w-48 md:w-56" value="70" max="100"></progress></div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-3xl leading-10 relative p-4">
+                        <div class="flex items-center justify-center">
+                            <div>
+                                <a href="single-product.html"> <img class="w-32" src="../assets/images/product-8.jpg" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="single-product.html"><h3 class="font-YekanBakh-ExtraBold text-base">دریل شارژی مدل دیوالت</h3></a>
+                                <div class="flex justify-center gap-4 text-base mt-4">
+                                    <span class="line-through">50.000 تومان</span>
+                                    <span class="text-yellow-500">45.000 تومان</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-sm justify-center gap-4">
+                            <div>موجودی: 7 از 20</div>
+                            <div><progress class="progress progress-warning w-48 md:w-56" value="70" max="100"></progress></div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
         </div>
     </div>
 </section>
-@endif

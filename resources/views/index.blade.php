@@ -11,13 +11,13 @@
     <meta name="twitter:description" content="خرید محصولات ورزشی با کیفیت از فروشگاه نیور با پرداخت قسطی و یا آنلاین با قیمت مناسب و ارسال رایگان به سراسر ایران"/>
 @endsection
 @section('content')
-@include('home.main.search')
-@include('home.main.snapp')
+@include('home.main.slider')
+@include('home.main.category')
+@include('home.main.amazing')
 @include('home.main.sectionOne')
-@include('home.main.social')
-@include('home.main.wrestling')
+@include('home.main.bannerOne')
 @include('home.main.sectionTwo')
-@include('home.main.article')
-@include('home.main.faq')
+@include('home.main.bannerTwo')
+@include('home.main.blog')
 @endsection
-@include('home.main.script')
+

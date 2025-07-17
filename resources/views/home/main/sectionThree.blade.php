@@ -1,15 +1,14 @@
-
 <section class="my-14 px-4">
     <div class="container mx-auto max-w-screen-xl">
         <div class="text-center mb-8">
-            <h2 class="font-YekanBakh-ExtraBlack text-3xl">جدیدترین محصولات</h2>
+            <h2 class="font-YekanBakh-ExtraBlack text-3xl">پیشنهاد های ترازو</h2>
         </div>
         <div class="swiper slider-product1">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="bg-white rounded-3xl leading-10 p-4">
                         <a href="single-product.html" class="flex flex-col items-center justify-center">
-                            <img class="mb-4" src="../assets/images/product-5.jpg" alt="">
+                            <img class="mb-4" src="../assets/images/product-2.jpg" alt="">
                         </a>
                         <div class="text-center">
                             <a href="single-product.html"><h3 class="font-YekanBakh-ExtraBold text-base">کیف کمری ابزار</h3></a>
@@ -69,7 +68,7 @@
                 <div class="swiper-slide">
                     <div class="bg-white rounded-3xl leading-10 p-4">
                         <a href="single-product.html" class="flex flex-col items-center justify-center">
-                            <img class="mb-4" src="../assets/images/product-4.jpg" alt="">
+                            <img class="mb-4" src="../assets/images/product-7.jpg" alt="">
                         </a>
                         <div class="text-center">
                             <a href="single-product.html"><h3 class="font-YekanBakh-ExtraBold text-base">دستگاه مدل Ingco</h3></a>
@@ -96,7 +95,7 @@
                 <div class="swiper-slide">
                     <div class="bg-white rounded-3xl leading-10 p-4">
                         <a href="single-product.html" class="flex flex-col items-center justify-center">
-                            <img class="mb-4" src="../assets/images/product-3.jpg" alt="">
+                            <img class="mb-4" src="../assets/images/product-4.jpg" alt="">
                         </a>
                         <div class="text-center">
                             <a href="single-product.html"><h3 class="font-YekanBakh-ExtraBold text-base">دستگاه پمپ باد</h3></a>
