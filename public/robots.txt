@@ -1,0 +1,13 @@
+user-agent: *
+disallow: /card
+disallow: /payment
+disallow: *?*
+disallow: /search?q=*
+disallow: /profile*
+disallow: *utm_*
+disallow: /rss
+disallow: /profile
+disallow: /profile/*
+disallow: /cart/*
+disallow: /checkout/*
+Sitemap: https://www.nivor.ir/product-sitemap.xml

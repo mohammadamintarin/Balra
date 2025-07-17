@@ -1,0 +1,66 @@
+html{scroll-behavior: smooth!important;}.comment-answer-section .sub-item::before,.comment-answer-section::before{background-color:rgba(149,160,177,var(--tw-bg-opacity));content:"";display:block}ul.cart li{margin:5px 8px;color:#ef4444!important}ul.cart li a,ul.cart li p{padding-right:4px}.meta-title{color:#fd505a;padding:0 5px;font-size:18px;font-family:iransans;font-weight:700}p.old{color:#94a3b8;text-decoration-line:line-through;font-size:16px}header{z-index:100}figure .image-hover{position:absolute;top:0;right:0;left:0;bottom:0;object-fit:contain;opacity:0;transition:opacity .2s}figure:hover .image-hover{opacity:1}figure img{max-width:100%;height:auto}footer .guid ul li:first-child,footer .link ul li:first-child{font-weight:700!important;font-size:18px;font-family:peyda}footer ul li{padding:8px 0;color:#0c3661;font-size:14px}.about{line-height:2}ul.social li{display:inline-block}.footer-cover{width:700px;display:block;margin:0 auto}@media (min-width:768px){.md\:grid{display:grid}}@media (min-width:1024px){.lg\:grid-cols-24{grid-template-columns:repeat(24,minmax(0,1fr))}.lg\:col-span-17{grid-column:span 17/span 17}.lg\:order-last{order:9999}}.comment-answer-section::before{height:100%;position:absolute;right:25px;top:-21px;width:3px;opacity:.2}.comment-answer-section .sub-item::before{height:3px;position:relative;right:-53px;top:57px;width:28px;transform:translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.comment-answer-section .last-item::after{content:"";display:block;height:calc(100% - 60px);position:absolute;right:-32px;top:84px;width:4px;background-color:rgba(255,255,255,var(--tw-bg-opacity));--tw-bg-opacity:1;border-color:rgba(247,248,249,var(--tw-border-opacity))}.profile-user-img{width:96px;box-shadow:0 2px 4px 0 rgba(0,0,0,.12);max-height:96px;max-width:96px}.avatar-upload{position:relative;max-width:205px;margin:auto auto 20px}.avatar-upload .avatar-edit{position:absolute;right:40px;z-index:1;top:70px}.avatar-upload .avatar-edit input{display:none}.avatar-upload .avatar-edit input+label{display:inline-block;width:34px;height:34px;margin-bottom:0;border-radius:100%;background:#fff;border:1px solid #d2d6de;box-shadow:0 2px 4px 0 rgba(0,0,0,.12);cursor:pointer;font-weight:400;transition:.2s ease-in-out}.avatar-upload .avatar-edit input+label:hover{background:#f1f1f1;border-color:#d6d6d6}.owl-nav{display:none!important}.owl-dots{margin-top:20px!important}.cashback-amount-menu{width:10px;height:10px;display:inline-block}.search{background:url("../../app/image/greenLine.svg") 0 0/100% no-repeat}.comment-avatar{height:60px}.reply-comment{padding-right:70px}.reply{padding-right:1rem!important}.review .pr-16{padding-right:4.65rem}
+.data_more_less_inner {
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.action_less {
+    display: none;
+}
+
+.less_active .action_less {
+    display: inline-block;
+}
+
+.less_active .action_more {
+    display: none;
+}
+
+.data_more_less:not(.less_active):not(.action_disabled) .data_more_less_inner:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff', GradientType=0);
+    height: 80px;
+}
+
+.data_more_less.action_disabled .more_less_action {
+    display: none;
+}
+
+h1 {
+    margin-bottom: 0px;
+}
+
+.btn {
+    color: #444;
+    text-decoration: none;
+    border: 1px solid #444;
+    padding: 7px 15px;
+}
+
+.btn:hover {
+    background: #444;
+    color: #fff;
+}
+.header-cover{
+    background-image: url(../image/moharam.webp);
+    height: 70px;
+}
+.content a{
+    color: #1e7ec6
+}
+.content h2 , .content h3{
+    font-size: 24px;
+    margin: 25px 0;
+    font-weight: bold;
+    color: #555;
+}
+
