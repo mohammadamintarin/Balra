@@ -16,8 +16,8 @@
 @include('home.main.amazing')
 @include('home.main.sectionOne')
 @include('home.main.bannerOne')
-@include('home.main.sectionTwo')
 @include('home.main.bannerTwo')
+@include('home.main.sectionTwo')
 @include('home.main.blog')
 @endsection
 

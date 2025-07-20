@@ -41,7 +41,7 @@
                             @foreach($sliders as $slider)
                                 <tr class="item{{$slider->id}}">
                                     <td>{{++$counter}}</td>
-                                    <td><img src="{{url('images/slider/thumbnail/' . $slider->image)}}" alt="{{$slider->name}}"  style="width: 50px;margin: 0 auto" ></td>
+                                    <td><img src="{{url('/images/slider/' . $slider->image)}}" alt="{{$slider->name}}"  style="width: 50px;margin: 0 auto" ></td>
                                     <td>{{$slider->name}}</td>
                                     <td class="flex items-center justify-center gap-x-3 text-gray-300" >
                                         <a class="group relative inline-block px-3" href="{{route('master.slider.edit' , ['slider' => $slider->id])}}">

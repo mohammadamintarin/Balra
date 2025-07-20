@@ -15,57 +15,28 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $offers = [];
-        foreach (Product::where('offer' ,  1)->get() as $offer)
-        {
-            if($offer->sale_check)
-            {
-                array_push($offers, $offer);
-            }
-        }
         $articles = Article::take(8)->get();
-        $sliders =  Slider::latest()->orderBy('priority' , 'desc')->get();
-        $banners = Banner::where('position' , 'A')->orderBy('priority' , 'desc')->get();
-
+        $sliders = Slider::where('position', 'A')->orderBy('priority', 'desc')->get();
+        $categorySlider = Slider::where('position', 'B')->orderby('priority', 'desc')->get();
+        $bannerOne = Banner::where('position', 'A')->get();
+        $bannerTwo = Banner::where('position', 'B')->orderBy('priority', 'desc')->get();
+        $offers = Product::where('offer', 1)->take(8)->get();
+        $bests = Product::where('best', 1)->take(8)->get();
+        $latests = Product::latest()->take(8)->get();
 
         $products = [];
-        foreach (Product::where('category_id' , 3)->take(12)->get() as $product)
-        {
-            if($product->quantity_check)
-            {
+        foreach (Product::where('category_id', 3)->take(12)->get() as $product) {
+            if ($product->quantity_check) {
                 array_push($products, $product);
-            }
-        }
-        $mens = [];
-        foreach (Product::where('category_id' , 2)->take(12)->get() as $product)
-        {
-            if($product->quantity_check)
-            {
-                array_push($mens, $product);
-            }
-        }
-
-        $bests = [];
-        foreach (Product::where('best' , 1)->get() as $product)
-        {
-            if($product->quantity_check)
-            {
-                array_push($bests, $product);
-            }
-        }
-        $wrestlings = [];
-        foreach (Product::where('category_id' , 8)->take(8)->get() as $product)
-        {
-            if($product->quantity_check)
-            {
-                array_push($wrestlings, $product);
             }
         }
         $count = Counter::find(1);
         $count->increment('viewed');
-        return view('index' ,compact(['articles' , 'sliders' , 'banners'  ,'offers' , 'bests' , 'wrestlings']));
+        return view('index', compact(['articles', 'sliders', 'bannerOne', 'bannerTwo', 'categorySlider', 'offers', 'bests' , 'latests']));
     }
-    public function search(Request $request){
+
+    public function search(Request $request)
+    {
         $search = $request->input('search');
         $results = Product::query()
             ->where('name', 'LIKE', "%{$search}%")
@@ -74,6 +45,6 @@ class HomeController extends Controller
         $title = "نتایج جستجو";
         $description = "نتایج جستجو در محصولات فروشگاه کتونی سمور";
         $count = count($results);
-        return view('home.search.index', compact('results' , 'title' , 'description' , 'count'));
+        return view('home.search.index', compact('results', 'title', 'description', 'count'));
     }
 }
